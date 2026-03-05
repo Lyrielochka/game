@@ -1,0 +1,86 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Лови быстрее - режим с веб-камерой</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@500;700;800&family=Exo+2:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/main.css" />
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="intro-grid">
+        <div>
+          <h1>Лови быстрее</h1>
+          <p class="subtitle">
+            Фрагмент 5 из 5. Финальный модуль Хроники вспыхивает светом и рассыпается на сияющие шарики памяти. Они хранят истории о дружбе, мужестве и верности своей стране. Лови их рукой перед волшебным экраном и собери последний элемент, чтобы восстановить Великую Хронику Добрых Дел.
+          </p>
+          <div class="chips">
+            <span class="chip">Webcam</span>
+            <span class="chip">Motion Capture</span>
+            <span class="chip">Аркада</span>
+          </div>
+        </div>
+        <aside class="intro-panel">
+          <h3>Как играть</h3>
+          <p>Используй ручку как указатель. Лучше всего работает синяя или бирюзовая ручка/маркер перед камерой.</p>
+          <p>Связь с сюжетом: каждый пойманный шар возвращает память поколений и делает Хронику ярче.</p>
+        </aside>
+      </div>
+      <div class="actions">
+        <a href="./index.html" class="btn ghost">Вернуться на главную</a>
+        <button id="timelineStart" class="btn secondary">Старт раунда</button>
+        <button id="timelineRestart" class="btn primary">Рестарт</button>
+      </div>
+    </section>
+
+    <section class="panel station">
+      <h2>Арена</h2>
+      <div class="timeline-wrap">
+        <div class="timeline-ui">
+          <span id="timelineScore">Шары: 0</span>
+          <span id="timelineTime">Время: 45</span>
+          <span id="timelineState">Статус: готов</span>
+        </div>
+
+        <div class="timeline-layout">
+          <div class="timeline-stage">
+            <canvas id="timelineCanvas" width="960" height="540" aria-label="Лови быстрее"></canvas>
+          </div>
+
+          <aside class="timeline-camera-card">
+            <h3>Камера</h3>
+            <video id="timelineVideo" class="timeline-video" autoplay muted playsinline></video>
+            <p class="timeline-gesture-tip">Наводи кончик ручки на шарики, чтобы лопать их.</p>
+          </aside>
+        </div>
+
+        <div class="keys">Управление: перемещай ручку перед камерой и касайся маркером шариков на экране.</div>
+      </div>
+
+      <div class="result-grid">
+        <div class="tile">
+          Лопнуто за раунд
+          <strong id="timelineRound">0</strong>
+        </div>
+        <div class="tile">
+          Лучший результат
+          <strong id="timelineBest">0</strong>
+        </div>
+        <div class="tile">
+          Пропущено
+          <strong id="timelineMissed">0</strong>
+        </div>
+      </div>
+
+      <div id="timelineFeedback" class="feedback"></div>
+    </section>
+  </div>
+
+  <script type="module" src="./assets/js/round-theme-standalone.js"></script>
+  <script type="module" src="./assets/js/timeline-standalone.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rhythm Rush - отдельный режим</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@500;700;800&family=Exo+2:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/main.css" />
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="intro-grid">
+        <div>
+          <h1>Rhythm Rush</h1>
+          <p class="subtitle">
+            Фрагмент 4 из 5. Золотой ключ открывает портал на путь испытаний. Отважный рыцарь-защитник устремляется вперёд по волшебной полосе препятствий, перепрыгивая ловушки и преодолевая преграды. Проведи рыцаря к финишу, чтобы доставить сигнал и вернуть четвёртый элемент Хроники.
+          </p>
+          <div class="chips">
+            <span class="chip">Arcade</span>
+            <span class="chip">Geometry Dash vibe</span>
+            <span class="chip">Быстрые попытки</span>
+          </div>
+        </div>
+        <aside class="intro-panel">
+          <h3>Управление</h3>
+          <p>`Пробел`, `↑` или клик по полю. Доступен двойной прыжок. Можно перезапускать забег сколько угодно раз.</p>
+          <p>Связь с сюжетом: успешный финиш включает праздничный маяк и зовёт тебя на финальный этап.</p>
+        </aside>
+      </div>
+      <div class="actions">
+        <a href="./index.html" class="btn ghost">Вернуться на главную</a>
+        <button id="startDashSolo" class="btn secondary">Старт забега</button>
+        <button id="retryDashSolo" class="btn primary">Рестарт</button>
+      </div>
+    </section>
+
+    <section class="panel station">
+      <h2>Забег</h2>
+      <div class="dash-wrap">
+        <div class="dash-ui">
+          <span id="soloDashInfo">Дистанция: 0 / 10000</span>
+          <span id="soloDashBest">Лучшее: 0</span>
+          <span id="soloDashBoost">Импульс: 0% • Сфер: 0</span>
+          <span id="soloDashStatus">Статус: готов</span>
+        </div>
+        <div class="dash-level-row">
+          <label for="soloDashLevel">Уровень:</label>
+          <select id="soloDashLevel" class="dash-level-select">
+            <option value="classic" selected>Уровень 1: классика</option>
+            <option value="upper">Уровень 2: вверх</option>
+            <option value="rift">Уровень 3: разлом</option>
+          </select>
+        </div>
+        <canvas id="soloDashCanvas" width="960" height="300" aria-label="Rhythm Rush Solo"></canvas>
+        <div class="keys">Управление: `Пробел`/`↑`/клик по полю для прыжка. Собирай сферы импульса, чтобы включить овердрайв-щит.</div>
+      </div>
+
+      <div class="result-grid">
+        <div class="tile">
+          Попыток за сессию
+          <strong id="soloRuns">0</strong>
+        </div>
+        <div class="tile">
+          Очки за последний финиш
+          <strong id="soloLastScore">0</strong>
+        </div>
+        <div class="tile">
+          Лучшие очки режима
+          <strong id="soloBestScore">0</strong>
+        </div>
+      </div>
+
+      <div id="soloFeedback" class="feedback"></div>
+    </section>
+  </div>
+
+  <script type="module" src="./assets/js/rush-standalone.js"></script>
+</body>
+</html>

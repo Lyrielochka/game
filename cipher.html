@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Взломай код - расшифруй ценности</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@500;700;800&family=Exo+2:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/main.css" />
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="intro-grid">
+        <div>
+          <h1>Взломай код</h1>
+          <p class="subtitle">
+            Фрагмент 1 из 5. Лада нашла первую страницу Великой Хроники Добрых Дел — древней книги, в которой записаны подвиги пионеров. Но озорной ветер времени перепутал буквы и спрятал важные слова. Расшифруй их, чтобы вернуть первый элемент Хроники и пробудить её силу.
+          </p>
+          <div class="chips">
+            <span class="chip">Анаграммы</span>
+            <span class="chip">Таймер</span>
+            <span class="chip">Комбо</span>
+          </div>
+        </div>
+        <aside class="intro-panel">
+          <h3>Как играть</h3>
+          <p>Нажми старт, вводи слово из перемешанных букв и подтверждай Enter или кнопкой. Если сложно, используй пропуск.</p>
+          <p>Связь с сюжетом: каждое разгаданное слово зажигает огонёк на карте Беларуси и открывает путь в зал памяти.</p>
+        </aside>
+      </div>
+      <div class="actions">
+        <a href="./index.html" class="btn ghost">Вернуться на главную</a>
+        <button id="cipherStart" class="btn secondary">Старт раунда</button>
+        <button id="cipherRestart" class="btn primary">Рестарт</button>
+      </div>
+    </section>
+
+    <section class="panel station">
+      <h2>Поле шифров</h2>
+      <div class="beat-wrap">
+        <div class="beat-ui">
+          <span id="cipherTimer">Время: 75</span>
+          <span id="cipherProgress">Задачи: 0 / 12</span>
+          <span id="cipherCombo">Комбо: x0</span>
+          <span id="cipherStatus">Статус: готов</span>
+        </div>
+
+        <article class="cipher-task">
+          <p id="cipherClue" class="cipher-clue">Нажми «Старт раунда», чтобы получить первый шифр.</p>
+          <p id="cipherScramble" class="cipher-scramble">---</p>
+          <input
+            id="cipherInput"
+            type="text"
+            placeholder="Введите слово"
+            autocomplete="off"
+            maxlength="32"
+            disabled
+          />
+          <div class="cipher-actions">
+            <button id="cipherCheck" class="btn secondary" type="button" disabled>Проверить</button>
+            <button id="cipherSkip" class="btn ghost" type="button" disabled>Пропуск (3)</button>
+          </div>
+        </article>
+      </div>
+
+      <div class="result-grid">
+        <div class="tile">
+          Очки за раунд
+          <strong id="cipherScore">0</strong>
+        </div>
+        <div class="tile">
+          Решено шифров
+          <strong id="cipherSolved">0</strong>
+        </div>
+        <div class="tile">
+          Лучшая серия
+          <strong id="cipherStreak">0</strong>
+        </div>
+        <div class="tile">
+          Лучший счёт
+          <strong id="cipherBest">0</strong>
+        </div>
+      </div>
+
+      <div id="cipherFeedback" class="feedback"></div>
+    </section>
+  </div>
+
+  <script type="module" src="./assets/js/round-theme-standalone.js"></script>
+  <script type="module" src="./assets/js/cipher-standalone.js"></script>
+</body>
+</html>

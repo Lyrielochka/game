@@ -1,0 +1,452 @@
+﻿
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PROЕдинство: Миссия поколений</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@500;700;800&family=Exo+2:wght@400;500;700&display=swap" rel="stylesheet" />
+  <script type="module" src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"></script>
+  <link rel="stylesheet" href="./assets/css/main.css" />
+</head>
+<body class="home-page">
+  <div class="wrap">
+    <section id="homeBuilder" class="home-builder">
+      <div id="homeScene" class="home-scene">
+        <div class="slot-main-title">
+          <img id="homeBanner" class="home-banner-image" src="./баннер.png" alt="Название игры" />
+        </div>
+        <div class="top-start-wrap">
+          <button id="homeStartGame" class="home-start-btn" type="button" aria-label="Старт">
+            <img class="home-start-image" src="./кнопка старт.png" alt="Старт" />
+          </button>
+        </div>
+
+        <div class="home-balloon-wrap" aria-hidden="true">
+          <dotlottie-player
+            class="home-balloon-player"
+            src="./Balloon.lottie"
+            background="transparent"
+            speed="1"
+            loop
+            autoplay
+          ></dotlottie-player>
+        </div>
+
+        <button
+          id="homeMusicToggle"
+          class="home-music-toggle is-on"
+          type="button"
+          aria-label="Выключить музыку на главной"
+          aria-pressed="true"
+          title="Музыка на главной"
+        >
+          <span class="home-music-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+
+        <div class="home-grid">
+          <aside class="home-column home-left">
+            <div class="home-left-cat-wrap" aria-hidden="true">
+              <dotlottie-player
+                class="home-left-cat-player"
+                src="./Lurking Cat.lottie"
+                background="transparent"
+                speed="1"
+                loop
+                autoplay
+              ></dotlottie-player>
+            </div>
+            <ul class="slot-list">
+              <li id="beatModeTrigger" class="slot-row">
+                <div class="img-slot slot-icon" data-slot="left-item-1-icon">icon-1.png</div>
+                <div class="game-name-text game-name-1">Взломай код</div>
+                <div class="score-pill score-pill-1">100</div>
+              </li>
+              <li id="heritageModeTrigger" class="slot-row">
+                <div class="img-slot slot-icon" data-slot="left-item-2-icon">icon-2.png</div>
+                <div class="game-name-text game-name-2">Найди пару</div>
+                <div class="score-pill score-pill-2">200</div>
+              </li>
+              <li id="guardianModeTrigger" class="slot-row">
+                <div class="img-slot slot-icon" data-slot="left-item-3-icon">icon-3.png</div>
+                <div class="game-name-text game-name-3">Битва фактов</div>
+                <div class="score-pill score-pill-3">300</div>
+              </li>
+              <li id="rhythmStartTrigger" class="slot-row">
+                <div class="img-slot slot-icon" data-slot="left-item-4-icon">icon-4.png</div>
+                <div class="game-name-text game-name-4">Прорыв</div>
+                <div class="score-pill score-pill-4">400</div>
+              </li>
+              <li id="lineTimeTrigger" class="slot-row">
+                <div class="img-slot slot-icon" data-slot="left-item-5-icon">icon-5.png</div>
+                <div class="game-name-text game-name-5">Лови быстрее</div>
+                <div class="score-pill score-pill-5">500</div>
+              </li>
+            </ul>
+          </aside>
+
+          <main class="home-column home-center">
+            <div class="score-board">
+              <div class="score-main-kicker">ВАШ ПОСЛЕДНИЙ РЕЗУЛЬТАТ</div>
+              <div id="homeLastResultValue" class="score-main-value">0</div>
+              <div class="score-main-label">ОЧКОВ В ПРОШЛОМ ЗАБЕГЕ</div>
+            </div>
+            <button id="homeRulesBtn" class="home-rules-btn" type="button">ПРАВИЛА</button>
+            <img class="home-start-image challenge-banner-image" src="./5 этапов.png" alt="5 этапов" />
+          </main>
+
+          <aside class="home-column home-right">
+            <div class="img-slot right-board-image" data-slot="right-board-image">right-board.png</div>
+            <h3 class="right-board-title">Доска почета</h3>
+            <p class="right-board-subtitle">Лучшие результаты миссии</p>
+            <ul id="homeHonorBoardList" class="right-board-list">
+              <li class="right-board-row">
+                <div class="img-slot right-medal-slot" data-slot="right-medal-1">medal-1.png</div>
+                <span class="right-board-name">Никита Лавров</span>
+                <span class="right-board-score">1 310 очков</span>
+              </li>
+              <li class="right-board-row">
+                <div class="img-slot right-medal-slot" data-slot="right-medal-2">medal-2.png</div>
+                <span class="right-board-name">Ольга Белова</span>
+                <span class="right-board-score">1 245 очков</span>
+              </li>
+              <li class="right-board-row">
+                <div class="img-slot right-medal-slot" data-slot="right-medal-3">medal-3.png</div>
+                <span class="right-board-name">Артем Гринев</span>
+                <span class="right-board-score">1 180 очков</span>
+              </li>
+              <li class="right-board-row">
+                <div class="img-slot right-medal-slot" data-slot="right-medal-4">medal-4.png</div>
+                <span class="right-board-name">Вера Михайлова</span>
+                <span class="right-board-score">1 110 очков</span>
+              </li>
+              <li class="right-board-row">
+                <div class="img-slot right-medal-slot" data-slot="right-medal-5">medal-5.png</div>
+                <span class="right-board-name">Денис Крылов</span>
+                <span class="right-board-score">1 040 очков</span>
+              </li>
+              <li class="right-board-row">
+                <div class="img-slot right-medal-slot" data-slot="right-medal-6">medal-6.png</div>
+                <span class="right-board-name">Елена Орехова</span>
+                <span class="right-board-score">990 очков</span>
+              </li>
+            </ul>
+          </aside>
+        </div>
+
+        <div class="home-footer">
+          <div class="img-slot slot-characters" data-slot="characters">characters.png</div>
+          <div class="img-slot slot-bottom-decor" data-slot="bottom-decor">bottom-decor.png</div>
+        </div>
+
+        <div class="home-mascot-wrap" aria-hidden="true">
+          <img class="home-mascot-image" src="./масскот.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <section id="intro" class="hero">
+      <div class="intro-grid">
+        <div>
+          <h1>PROЕдинство: Миссия поколений</h1>
+          <p class="subtitle">
+            Единый забег из 5 игр: «Взломай код», «Найди пару», «Битва фактов», «Прорыв», «Лови быстрее».
+            Вместе с Ладой собери утерянную Хронику Единства и верни в нее истории о дружбе, смелости и любви к родной Беларуси.
+          </p>
+          <div class="chips">
+            <span class="chip">5 этапов подряд</span>
+            <span class="chip">Таймер забега</span>
+            <span class="chip">До 1500 очков</span>
+            <span class="chip">Режим тренировки</span>
+          </div>
+        </div>
+        <aside class="intro-panel">
+          <h3>Сюжет приключения</h3>
+          <p>
+            Озорной ветер разбросал страницы Хроники поколений по пяти игровым мирам.
+          </p>
+          <p>
+            В каждом этапе ты возвращаешь один фрагмент истории нашей страны. Собери все части и зажги звезду Единства!
+          </p>
+        </aside>
+      </div>
+      <div class="actions">
+        <button id="startGame" class="btn primary">Старт миссии</button>
+        <a href="./rush.html" class="btn ghost">Играть только в Rhythm Rush</a>
+        <a href="./cipher.html" class="btn ghost">Играть в Взломай код</a>
+      </div>
+    </section>
+
+    <section id="gameHud" class="panel hud hidden">
+      <div class="hud-left">
+        <div class="score" id="scoreLabel">Пройдено этапов: 0 / 5</div>
+        <div class="achieve-score" id="achievementLabel">Сейчас: Этап 1 из 5</div>
+      </div>
+      <div class="steps" id="steps"></div>
+      <div class="hud-actions">
+        <div id="runTimerLabel" class="run-timer">Таймер: 00:00</div>
+        <button id="backHome" class="btn ghost" type="button">Вернуться на главную</button>
+      </div>
+    </section>
+
+    <section id="station1" class="panel station hidden">
+      <h2>Этап 1 из 5. Взломай код</h2>
+      <p class="lead">Фрагмент 1: буквенный вихрь перепутал важные слова о дружбе и уважении к Родине. Расшифруй их до конца таймера и верни первую страницу Хроники.</p>
+      <div class="actions">
+        <button id="cipherStart" class="btn secondary">Старт раунда</button>
+        <button id="cipherRestart" class="btn ghost">Рестарт</button>
+        <button id="next1" class="btn primary" disabled>Дальше</button>
+      </div>
+
+      <div class="beat-wrap">
+        <div class="beat-ui">
+          <span id="cipherTimer">Время: 75</span>
+          <span id="cipherProgress">Задачи: 0 / 12</span>
+          <span id="cipherCombo">Комбо: x0</span>
+          <span id="cipherStatus">Статус: готов</span>
+        </div>
+
+        <article class="cipher-task">
+          <p id="cipherClue" class="cipher-clue">Нажми «Старт раунда», чтобы получить первый шифр.</p>
+          <p id="cipherScramble" class="cipher-scramble">---</p>
+          <input id="cipherInput" type="text" placeholder="Введите слово" autocomplete="off" maxlength="32" disabled />
+          <div class="cipher-actions">
+            <button id="cipherCheck" class="btn secondary" type="button" disabled>Проверить</button>
+            <button id="cipherSkip" class="btn ghost" type="button" disabled>Пропуск (3)</button>
+          </div>
+        </article>
+      </div>
+
+      <div class="result-grid">
+        <div class="tile">Очки за раунд<strong id="cipherScore">0</strong></div>
+        <div class="tile">Решено шифров<strong id="cipherSolved">0</strong></div>
+        <div class="tile">Лучшая серия<strong id="cipherStreak">0</strong></div>
+        <div class="tile">Лучший счет<strong id="cipherBest">0</strong></div>
+      </div>
+      <div id="cipherFeedback" class="feedback"></div>
+    </section>
+
+    <section id="station2" class="panel station hidden">
+      <h2>Этап 2 из 5. Найди пару</h2>
+      <p class="lead">Фрагмент 2: карточки из зала памяти ожили и перепутались. Найди пары «событие - дата» и собери подсказку к следующему этапу.</p>
+      <div class="actions">
+        <button id="heritageStart" class="btn secondary">Новая игра</button>
+        <button id="heritageRestart" class="btn ghost">Рестарт темы</button>
+        <button id="next2" class="btn primary" disabled>Дальше</button>
+      </div>
+
+      <div class="heritage-toolbar">
+        <label for="heritageTheme">Тема:</label>
+        <select id="heritageTheme" class="heritage-theme-select">
+          <option value="belarus_history">История Беларуси</option>
+          <option value="state_symbols">Государственность и символы</option>
+          <option value="culture_science">Культура и наука</option>
+        </select>
+      </div>
+
+      <div class="heritage-ui">
+        <span id="heritageTimer">Время: 180</span>
+        <span id="heritageMoves">Ходы: 0</span>
+        <span id="heritageMatches">Пары: 0 / 8</span>
+        <span id="heritageStatus">Статус: готов</span>
+      </div>
+      <div id="heritageBoard" class="heritage-board" aria-label="Карточки на память"></div>
+
+      <div class="result-grid">
+        <div class="tile">Лучшее время<strong id="heritageBestTime">-</strong></div>
+        <div class="tile">Минимум ходов<strong id="heritageBestMoves">-</strong></div>
+        <div class="tile">Побед в теме<strong id="heritageWins">0</strong></div>
+      </div>
+      <div id="heritageFeedback" class="feedback"></div>
+    </section>
+
+    <section id="station3" class="panel station hidden">
+      <h2>Этап 3 из 5. Битва фактов</h2>
+      <p class="lead">Фрагмент 3: тебя встречает весёлый Хранитель фактов. Отвечай смело и точно, чтобы доказать: ты знаешь историю своей страны и достоин ключа.</p>
+      <div class="actions">
+        <button id="guardianStart" class="btn secondary">Старт раунда</button>
+        <button id="guardianRestart" class="btn ghost">Рестарт</button>
+        <button id="next3" class="btn primary" disabled>Дальше</button>
+      </div>
+
+      <div class="guardian-wrap">
+        <div class="guardian-toolbar">
+          <label for="guardianDifficulty">Сложность:</label>
+          <select id="guardianDifficulty" class="guardian-difficulty">
+            <option value="easy">Легко</option>
+            <option value="normal" selected>Нормально</option>
+            <option value="hard">Сложно</option>
+          </select>
+        </div>
+
+        <div class="guardian-ui">
+          <span id="guardianSeries">Серия: 0 / 0</span>
+          <span id="guardianTimer">Время: 0</span>
+          <span id="guardianCombo">Комбо: x0</span>
+          <span id="guardianStatus">Статус: готов</span>
+        </div>
+
+        <article class="guardian-question-card">
+          <h3 id="guardianQuestionTitle">Готов к раунду</h3>
+          <p id="guardianQuestion" class="guardian-question">Нажми «Старт раунда», чтобы получить серию вопросов.</p>
+          <div id="guardianOptions" class="guardian-options"></div>
+        </article>
+
+        <div class="guardian-progress">
+          <div id="guardianProgressFill" class="guardian-progress-fill"></div>
+        </div>
+      </div>
+
+      <div class="result-grid">
+        <div class="tile">Очки раунда<strong id="guardianScore">0</strong></div>
+        <div class="tile">Верных ответов<strong id="guardianCorrect">0</strong></div>
+        <div class="tile">Лучший счет<strong id="guardianBestScore">0</strong></div>
+        <div class="tile">Лучший комбо<strong id="guardianBestCombo">0</strong></div>
+        <div class="tile">Побед в серии<strong id="guardianWins">0</strong></div>
+      </div>
+      <div id="guardianFeedback" class="feedback"></div>
+    </section>
+
+    <section id="station4" class="panel station hidden">
+      <h2>Этап 4 из 5. Прорыв</h2>
+      <p class="lead">Фрагмент 4: ключ открыл радужный маршрут прорыва. Прыгай ловко, беги быстро и донеси сигнал до финального модуля Хроники.</p>
+      <div class="actions">
+        <button id="startDashSolo" class="btn secondary">Старт забега</button>
+        <button id="retryDashSolo" class="btn ghost">Рестарт</button>
+        <button id="next4" class="btn primary" disabled>Дальше</button>
+      </div>
+
+      <div class="dash-wrap">
+        <div class="dash-ui">
+          <span id="soloDashInfo">Дистанция: 0 / 10000</span>
+          <span id="soloDashBest">Лучшее: 0</span>
+          <span id="soloDashBoost">Импульс: 0% • Сфер: 0</span>
+          <span id="soloDashStatus">Статус: готов</span>
+        </div>
+        <div class="dash-level-row">
+          <label for="soloDashLevel">Уровень:</label>
+          <select id="soloDashLevel" class="dash-level-select">
+            <option value="classic" selected>Уровень 1: классика</option>
+            <option value="upper">Уровень 2: вверх</option>
+            <option value="rift">Уровень 3: разлом</option>
+          </select>
+        </div>
+        <canvas id="soloDashCanvas" width="960" height="300" aria-label="Rhythm Rush Solo"></canvas>
+        <div class="keys">Управление: `Пробел`/`↑`/клик по полю для прыжка. Собирай сферы импульса, чтобы включить овердрайв-щит.</div>
+      </div>
+
+      <div class="result-grid">
+        <div class="tile">Попыток за сессию<strong id="soloRuns">0</strong></div>
+        <div class="tile">Очки за последний финиш<strong id="soloLastScore">0</strong></div>
+        <div class="tile">Лучшие очки режима<strong id="soloBestScore">0</strong></div>
+      </div>
+      <div id="soloFeedback" class="feedback"></div>
+    </section>
+
+    <section id="station5" class="panel station hidden">
+      <h2>Этап 5 из 5. Лови быстрее</h2>
+      <p class="lead">Фрагмент 5: финальный модуль рассыпался на шарики памяти. Лопай их быстрее, чтобы вернуть последние краски в Хронику и завершить миссию.</p>
+      <div class="actions">
+        <button id="timelineStart" class="btn secondary">Старт раунда</button>
+        <button id="timelineRestart" class="btn ghost">Рестарт</button>
+        <button id="finishGame" class="btn primary" disabled>Финал миссии</button>
+      </div>
+
+      <div class="timeline-wrap">
+        <div class="timeline-ui">
+          <span id="timelineScore">Шары: 0</span>
+          <span id="timelineTime">Время: 45</span>
+          <span id="timelineState">Статус: готов</span>
+        </div>
+        <div class="timeline-layout">
+          <div class="timeline-stage">
+            <canvas id="timelineCanvas" width="960" height="540" aria-label="Лови быстрее"></canvas>
+          </div>
+          <aside class="timeline-camera-card">
+            <h3>Камера</h3>
+            <video id="timelineVideo" class="timeline-video" autoplay muted playsinline></video>
+            <p class="timeline-gesture-tip">Наводи кончик ручки на шарики, чтобы лопать их.</p>
+          </aside>
+        </div>
+      </div>
+
+      <div class="result-grid">
+        <div class="tile">Лопнуто за раунд<strong id="timelineRound">0</strong></div>
+        <div class="tile">Лучший результат<strong id="timelineBest">0</strong></div>
+        <div class="tile">Пропущено<strong id="timelineMissed">0</strong></div>
+      </div>
+      <div id="timelineFeedback" class="feedback"></div>
+    </section>
+
+    <section id="result" class="panel station hidden result-finale">
+      <div class="result-kicker">Миссия завершена</div>
+      <h2 class="result-title">Поздравляем!</h2>
+      <p class="lead" id="resultLead"></p>
+      <p id="resultCongrats" class="result-congrats"></p>
+      <div class="result-grid">
+        <div class="tile">
+          Итоговый балл
+          <strong id="resultScore"></strong>
+        </div>
+        <div class="tile">
+          Уровень
+          <strong id="resultLevel"></strong>
+        </div>
+        <div class="tile">
+          Лучший результат
+          <strong id="bestScore"></strong>
+        </div>
+        <div class="tile">
+          Время прохождения
+          <strong id="resultRunTime"></strong>
+        </div>
+        <div class="tile">
+          Этапов пройдено
+          <strong id="resultAchievement"></strong>
+        </div>
+        <div class="tile">
+          Темп прохождения
+          <strong id="resultPace"></strong>
+        </div>
+        <div class="tile">
+          До личного рекорда
+          <strong id="resultToBest"></strong>
+        </div>
+      </div>
+      <p class="accent" id="resultHint"></p>
+      <div class="result-mail-card">
+        <h3>Доска почета</h3>
+        <p id="resultMailLead">Хочешь попасть на доску почета? Отправь свой результат на почту организатора.</p>
+        <div class="actions">
+          <button id="sendByEmail" class="btn primary" type="button">Отправить результат на egortto@yandex.by</button>
+        </div>
+        <p class="accent" id="resultSyncStatus"></p>
+      </div>
+      <div class="player-name-row">
+        <label for="playerNameInput">Имя для результата:</label>
+        <input id="playerNameInput" type="text" maxlength="40" placeholder="Например, Егор" autocomplete="name" />
+        <button id="savePlayerName" class="btn ghost" type="button">Сохранить имя</button>
+      </div>
+      <div class="actions">
+        <button id="restart" class="btn primary">Перепройти и улучшить результат</button>
+        <button id="resultBackHome" class="btn ghost" type="button">На главную</button>
+      </div>
+    </section>
+  </div>
+
+  <div id="confetti" class="confetti hidden"></div>
+
+  <script type="module" src="./assets/js/cipher-standalone.js"></script>
+  <script type="module" src="./assets/js/heritage-memory.js"></script>
+  <script type="module" src="./assets/js/guardian-quiz.js"></script>
+  <script type="module" src="./assets/js/rush-standalone.js"></script>
+  <script type="module" src="./assets/js/timeline-standalone.js"></script>
+  <script type="module" src="./assets/js/app.js"></script>
+</body>
+</html>

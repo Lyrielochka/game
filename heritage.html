@@ -1,0 +1,84 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Найди пару - карточки на память</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@500;700;800&family=Exo+2:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/main.css" />
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="intro-grid">
+        <div>
+          <h1>Найди пару</h1>
+          <p class="subtitle">
+            Фрагмент 2 из 5. Ты в волшебном зале памяти, где карточки любят прятаться и путаться.
+            Ищи пары: дата и событие, символ и значение, личность и вклад, чтобы вернуть вторую деталь Хроники.
+          </p>
+          <div class="chips">
+            <span class="chip">История Беларуси</span>
+            <span class="chip">Даты и события</span>
+            <span class="chip">Таймер и рекорды</span>
+          </div>
+        </div>
+        <aside class="intro-panel">
+          <h3>Как играть</h3>
+          <p>Открывай карточки попарно. Пара совпадает, если дата соответствует событию (или связанная карточка к теме).</p>
+          <p>Связь с сюжетом: каждая верная пара собирает историю родной Беларуси и подсказывает путь к Хранителю фактов.</p>
+        </aside>
+      </div>
+      <div class="actions">
+        <a href="./index.html" class="btn ghost">Вернуться на главную</a>
+        <button id="heritageStart" class="btn secondary">Новая игра</button>
+        <button id="heritageRestart" class="btn primary">Рестарт темы</button>
+      </div>
+    </section>
+
+    <section class="panel station">
+      <h2>Поле памяти</h2>
+
+      <div class="heritage-toolbar">
+        <label for="heritageTheme">Тема:</label>
+        <select id="heritageTheme" class="heritage-theme-select">
+          <option value="belarus_history">История Беларуси</option>
+          <option value="state_symbols">Государственность и символы</option>
+          <option value="culture_science">Культура и наука</option>
+        </select>
+      </div>
+
+      <div class="heritage-ui">
+        <span id="heritageTimer">Время: 180</span>
+        <span id="heritageMoves">Ходы: 0</span>
+        <span id="heritageMatches">Пары: 0 / 8</span>
+        <span id="heritageStatus">Статус: готов</span>
+      </div>
+
+      <div id="heritageBoard" class="heritage-board" aria-label="Карточки на память"></div>
+
+      <div class="result-grid">
+        <div class="tile">
+          Лучшее время (осталось)
+          <strong id="heritageBestTime">-</strong>
+        </div>
+        <div class="tile">
+          Минимум ходов
+          <strong id="heritageBestMoves">-</strong>
+        </div>
+        <div class="tile">
+          Побед в теме
+          <strong id="heritageWins">0</strong>
+        </div>
+      </div>
+
+      <div id="heritageFeedback" class="feedback"></div>
+    </section>
+  </div>
+
+  <script type="module" src="./assets/js/round-theme-standalone.js"></script>
+  <script type="module" src="./assets/js/heritage-memory.js"></script>
+</body>
+</html>

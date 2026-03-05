@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Битва фактов - быстрый викторинный раунд</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@500;700;800&family=Exo+2:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/main.css" />
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="intro-grid">
+        <div>
+          <h1>Битва фактов</h1>
+          <p class="subtitle">
+            Фрагмент 3 из 5. Координаты привели тебя к весёлому Хранителю фактов.
+            Пройди викторину и покажи, как здорово ты знаешь историю и символы своей страны.
+          </p>
+          <div class="chips">
+            <span class="chip">Quiz Sprint</span>
+            <span class="chip">Combo Score</span>
+            <span class="chip">Сложности</span>
+          </div>
+        </div>
+        <aside class="intro-panel">
+          <h3>Как играть</h3>
+          <p>Выбирай сложность, запускай раунд и отвечай без ошибок для роста комбо. Чем длиннее серия, тем больше очков.</p>
+          <p>Связь с сюжетом: правильные ответы открывают золотой ключ к этапу «Прорыв».</p>
+        </aside>
+      </div>
+      <div class="actions">
+        <a href="./index.html" class="btn ghost">Вернуться на главную</a>
+        <button id="guardianStart" class="btn secondary">Старт раунда</button>
+        <button id="guardianRestart" class="btn primary">Рестарт</button>
+      </div>
+    </section>
+
+    <section class="panel station">
+      <h2>Викторина</h2>
+      <div class="guardian-wrap">
+        <div class="guardian-toolbar">
+          <label for="guardianDifficulty">Сложность:</label>
+          <select id="guardianDifficulty" class="guardian-difficulty">
+            <option value="easy">Легко</option>
+            <option value="normal" selected>Нормально</option>
+            <option value="hard">Сложно</option>
+          </select>
+        </div>
+
+        <div class="guardian-ui">
+          <span id="guardianSeries">Серия: 0 / 0</span>
+          <span id="guardianTimer">Время: 0</span>
+          <span id="guardianCombo">Комбо: x0</span>
+          <span id="guardianStatus">Статус: готов</span>
+        </div>
+
+        <article class="guardian-question-card">
+          <h3 id="guardianQuestionTitle">Готов к раунду</h3>
+          <p id="guardianQuestion" class="guardian-question">Нажми «Старт раунда», чтобы получить серию вопросов.</p>
+          <div id="guardianOptions" class="guardian-options"></div>
+        </article>
+
+        <div class="guardian-progress">
+          <div id="guardianProgressFill" class="guardian-progress-fill"></div>
+        </div>
+
+        <div class="keys">Формат: один правильный ответ на вопрос. Верная серия увеличивает комбо-множитель.</div>
+      </div>
+
+      <div class="result-grid">
+        <div class="tile">
+          Очки раунда
+          <strong id="guardianScore">0</strong>
+        </div>
+        <div class="tile">
+          Верных ответов
+          <strong id="guardianCorrect">0</strong>
+        </div>
+        <div class="tile">
+          Лучший счет
+          <strong id="guardianBestScore">0</strong>
+        </div>
+        <div class="tile">
+          Лучший комбо
+          <strong id="guardianBestCombo">0</strong>
+        </div>
+        <div class="tile">
+          Побед в серии
+          <strong id="guardianWins">0</strong>
+        </div>
+      </div>
+
+      <div id="guardianFeedback" class="feedback"></div>
+    </section>
+  </div>
+
+  <script type="module" src="./assets/js/round-theme-standalone.js"></script>
+  <script type="module" src="./assets/js/guardian-quiz.js"></script>
+</body>
+</html>
