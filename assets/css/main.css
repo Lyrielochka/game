@@ -1029,6 +1029,7 @@
       gap: 0;
       min-height: clamp(42px, 3.7vw, 50px);
       padding-inline: 2px;
+      position: relative;
       filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.2));
       animation: menuRowBreath 5.4s ease-in-out infinite;
     }
@@ -1055,22 +1056,27 @@
 
     .home-left .slot-row:nth-child(1) {
       transform: translate(16px, var(--row-1-offset-y));
+      z-index: 5;
     }
 
     .home-left .slot-row:nth-child(2) {
       transform: translate(16px, var(--row-2-offset-y));
+      z-index: 4;
     }
 
     .home-left .slot-row:nth-child(3) {
       transform: translate(16px, var(--row-3-offset-y));
+      z-index: 3;
     }
 
     .home-left .slot-row:nth-child(4) {
       transform: translate(16px, var(--row-4-offset-y));
+      z-index: 2;
     }
 
     .home-left .slot-row:nth-child(5) {
       transform: translate(16px, var(--row-5-offset-y));
+      z-index: 1;
     }
 
     #rhythmStartTrigger {
@@ -1165,8 +1171,8 @@
       border-radius: 0;
       color: #f5e6bf;
       font-family: "Exo 2", "Segoe UI", sans-serif;
-      font-size: clamp(2.0rem, 0.88vw, 0.95rem);
-      font-weight: 700;
+      font-size: clamp(2.2rem, 2.45vw, 2.85rem);
+      font-weight: 800;
       padding: 0;
       letter-spacing: 0.01em;
       min-width: 0;
@@ -1180,12 +1186,12 @@
     /* Linked controls: title + score move together for each row */
     .home-left .game-name-1,
     .home-left .score-pill-1 {
-      transform: translateY(-20px);
+      transform: translateY(-10px);
     }
 
     .home-left .game-name-2,
     .home-left .score-pill-2 {
-      transform: translateY(10px);
+      transform: translateY(20px);
     }
 
     .home-left .game-name-3,
@@ -1200,7 +1206,7 @@
 
     .home-left .game-name-5,
     .home-left .score-pill-5 {
-      transform: translateY(110px);
+      transform: translateY(100px);
     }
 
     .score-pill {
@@ -1678,7 +1684,7 @@
       margin: 0;
       color: #ffe5a6;
       font-family: "Tektur", "Trebuchet MS", sans-serif;
-      font-size: clamp(1.78rem, 2.55vw, 2.75rem);
+      font-size: clamp(1.95rem, 2.8vw, 3rem);
       font-weight: 800;
       letter-spacing: 0.06em;
       text-transform: uppercase;
@@ -1720,7 +1726,7 @@
       grid-template-columns: clamp(52px, 3.2vw, 62px) minmax(0, 1fr) max-content;
       gap: clamp(10px, 1.1vw, 14px);
       align-items: center;
-      min-height: clamp(68px, 6.2vw, 88px);
+      min-height: clamp(74px, 6.7vw, 94px);
       padding: clamp(14px, 1.2vw, 20px) clamp(12px, 2.1vw, 16px);
       border: 1px solid rgba(255, 221, 148, 0.52);
       border-radius: 12px;
@@ -1824,7 +1830,7 @@
     .right-board-name {
       color: #ffefc8;
       font-family: "Exo 2", "Segoe UI", sans-serif;
-      font-size: clamp(1.25rem, 1.45vw, 1.7rem);
+      font-size: clamp(1.4rem, 1.65vw, 1.95rem);
       font-weight: 700;
       display: block;
       width: 100%;
@@ -1842,8 +1848,8 @@
     .right-board-score {
       color: #ffe296;
       font-family: "Tektur", "Trebuchet MS", sans-serif;
-      font-size: clamp(1rem, 1.1vw, 1.3rem);
-      font-weight: 800;
+      font-size: clamp(1.28rem, 1.5vw, 1.72rem);
+      font-weight: 900;
       letter-spacing: 0.03em;
       width: 100%;
       text-align: right;
