@@ -97,8 +97,12 @@
               <div id="homeLastResultValue" class="score-main-value">0</div>
               <div class="score-main-label">ОЧКОВ В ПРОШЛОМ ЗАБЕГЕ</div>
             </div>
-            <button id="homeRulesBtn" class="home-rules-btn" type="button">ПРАВИЛА</button>
-            <img class="home-start-image challenge-banner-image" src="./5 этапов.png" alt="5 этапов" />
+            <button id="homeRulesBtn" class="home-rules-btn" type="button" aria-label="Правила">
+              <img class="home-start-image challenge-banner-image" src="./правила.png" alt="Правила" />
+            </button>
+            <button id="homeAuthorsBtn" class="home-authors-btn" type="button" aria-label="Авторы" aria-expanded="false">
+              <img class="home-start-image challenge-banner-image" src="./авторы.png" alt="Авторы" />
+            </button>
           </main>
 
           <aside class="home-column home-right">
@@ -438,6 +442,15 @@
         <button id="resultBackHome" class="btn ghost" type="button">На главную</button>
       </div>
     </section>
+  </div>
+
+  <div id="homeAuthorsModal" class="home-authors-modal hidden" role="dialog" aria-modal="true" aria-labelledby="homeAuthorsTitle">
+    <div class="home-authors-dialog">
+      <button id="homeAuthorsClose" class="home-authors-close" type="button" aria-label="Закрыть">×</button>
+      <h3 id="homeAuthorsTitle">Авторы</h3>
+      <p>Разработала: Лебедева Мария Евгеньевна</p>
+      <p>Научный рукводитель: Титов Егор Александрович</p>
+    </div>
   </div>
 
   <div id="confetti" class="confetti hidden"></div>

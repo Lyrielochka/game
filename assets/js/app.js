@@ -49,6 +49,9 @@ const state = {
 const homeScene = byId("homeScene");
 const homeMusicToggle = byId("homeMusicToggle");
 const homeRulesBtn = byId("homeRulesBtn");
+const homeAuthorsBtn = byId("homeAuthorsBtn");
+const homeAuthorsModal = byId("homeAuthorsModal");
+const homeAuthorsClose = byId("homeAuthorsClose");
 const homeMascotImage = document.querySelector(".home-mascot-image");
 const HOME_MASCOT_EXPLAIN_SRC = "./обьясняет.png";
 const HOME_MASCOT_DEFAULT_SRC = homeMascotImage?.getAttribute("src") || "./масскот.png";
@@ -733,6 +736,26 @@ function prevHomeRulesStep() {
   renderHomeRulesStep();
 }
 
+function isHomeAuthorsModalOpen() {
+  return Boolean(homeAuthorsModal && !homeAuthorsModal.classList.contains("hidden"));
+}
+
+function openHomeAuthorsModal() {
+  if (!homeAuthorsModal) {
+    return;
+  }
+  homeAuthorsModal.classList.remove("hidden");
+  homeAuthorsBtn?.setAttribute("aria-expanded", "true");
+}
+
+function closeHomeAuthorsModal() {
+  if (!homeAuthorsModal) {
+    return;
+  }
+  homeAuthorsModal.classList.add("hidden");
+  homeAuthorsBtn?.setAttribute("aria-expanded", "false");
+}
+
 function updateHomeLastResult() {
   const valueNode = byId("homeLastResultValue");
   if (!valueNode) {
@@ -1033,6 +1056,7 @@ function showResult() {
 
 function launchMission() {
   closeHomeRulesGuide();
+  closeHomeAuthorsModal();
   document.body.classList.remove("home-page");
   syncHomeMusic();
   syncStageAudio();
@@ -1073,6 +1097,27 @@ if (homeRulesBtn) {
       return;
     }
     openHomeRulesGuide();
+  });
+}
+
+if (homeAuthorsBtn) {
+  homeAuthorsBtn.addEventListener("click", () => {
+    openHomeAuthorsModal();
+  });
+}
+
+if (homeAuthorsClose) {
+  homeAuthorsClose.addEventListener("click", () => {
+    closeHomeAuthorsModal();
+  });
+}
+
+if (homeAuthorsModal) {
+  homeAuthorsModal.addEventListener("click", (event) => {
+    if (event.target !== homeAuthorsModal) {
+      return;
+    }
+    closeHomeAuthorsModal();
   });
 }
 
@@ -1194,8 +1239,14 @@ const unlockHomeMusic = () => {
 document.addEventListener("pointerdown", unlockHomeMusic);
 document.addEventListener("keydown", unlockHomeMusic);
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && homeRulesGuide.open) {
+  if (event.key !== "Escape") {
+    return;
+  }
+  if (homeRulesGuide.open) {
     closeHomeRulesGuide();
+  }
+  if (isHomeAuthorsModalOpen()) {
+    closeHomeAuthorsModal();
   }
 });
 document.addEventListener("touchstart", unlockHomeMusic, { passive: true });

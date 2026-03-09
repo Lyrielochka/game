@@ -946,7 +946,7 @@
     }
 
     .home-left {
-      background: url("../../этапы.png") center -70px / 100% auto no-repeat;
+      background: url("../../этапы.png") center -88px / 120% auto no-repeat;
       border: none;
       border-radius: 0;
       box-shadow: none;
@@ -1180,27 +1180,27 @@
     /* Linked controls: title + score move together for each row */
     .home-left .game-name-1,
     .home-left .score-pill-1 {
-      transform: translateY(-40px);
+      transform: translateY(-20px);
     }
 
     .home-left .game-name-2,
     .home-left .score-pill-2 {
-      transform: translateY(-20px);
+      transform: translateY(10px);
     }
 
     .home-left .game-name-3,
     .home-left .score-pill-3 {
-      transform: translateY(-20px);
+      transform: translateY(40px);
     }
 
     .home-left .game-name-4,
     .home-left .score-pill-4 {
-      transform: translateY(0);
+      transform: translateY(80px);
     }
 
     .home-left .game-name-5,
     .home-left .score-pill-5 {
-      transform: translateY(18px);
+      transform: translateY(110px);
     }
 
     .score-pill {
@@ -1321,44 +1321,57 @@
     }
 
     .home-rules-btn {
-      width: 100%;
-      min-height: clamp(56px, 5.4vw, 84px);
-      border-radius: 999px;
-      border: 1px solid rgba(255, 206, 124, 0.68);
-      background: linear-gradient(180deg, rgba(82, 56, 24, 0.92), rgba(52, 33, 12, 0.95));
-      color: #ffe19b;
-      font-family: "Tektur", "Trebuchet MS", sans-serif;
-      font-size: clamp(1.15rem, 1.7vw, 1.6rem);
-      font-weight: 800;
-      text-align: center;
-      letter-spacing: 0.07em;
-      text-shadow: 0 2px 0 rgba(26, 13, 2, 0.9), 0 0 10px rgba(255, 211, 118, 0.24);
-      box-shadow:
-        inset 0 1px 0 rgba(255, 238, 190, 0.25),
-        0 4px 12px rgba(0, 0, 0, 0.28);
+      border: 0;
+      background: transparent;
+      padding: 0;
+      margin: 0;
+      line-height: 0;
       cursor: pointer;
+      justify-self: center;
+      align-self: center;
       transition: transform 0.15s ease, filter 0.15s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .home-rules-btn::before {
-      content: "";
-      position: absolute;
-      inset: -22% -30%;
-      background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.2) 49%, transparent 70%);
-      transform: translateX(-135%);
-      animation: homeShimmerSweep 4.6s linear infinite;
-      pointer-events: none;
     }
 
     .home-rules-btn:hover {
       transform: translateY(-1px);
-      filter: brightness(1.04);
+      filter: brightness(1.05);
     }
 
     .home-rules-btn:active {
       transform: translateY(0);
+    }
+
+    .home-rules-btn:focus-visible {
+      outline: 2px solid rgba(255, 209, 126, 0.95);
+      outline-offset: 4px;
+      border-radius: 12px;
+    }
+
+    .home-authors-btn {
+      border: 0;
+      background: transparent;
+      padding: 0;
+      margin: 0;
+      line-height: 0;
+      cursor: pointer;
+      justify-self: center;
+      align-self: end;
+      transition: transform 0.15s ease, filter 0.15s ease;
+    }
+
+    .home-authors-btn:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.05);
+    }
+
+    .home-authors-btn:active {
+      transform: translateY(0);
+    }
+
+    .home-authors-btn:focus-visible {
+      outline: 2px solid rgba(255, 209, 126, 0.95);
+      outline-offset: 4px;
+      border-radius: 12px;
     }
 
     .home-rules-guide {
@@ -1540,6 +1553,71 @@
       width: var(--home-banner-width);
       max-width: 100%;
       filter: drop-shadow(0 4px 9px rgba(0, 0, 0, 0.3));
+    }
+
+    .home-authors-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1400;
+      display: grid;
+      place-items: center;
+      padding: 16px;
+      background: rgba(5, 16, 25, 0.7);
+      backdrop-filter: blur(2px);
+    }
+
+    .home-authors-dialog {
+      position: relative;
+      width: min(560px, calc(100vw - 32px));
+      border-radius: 20px;
+      border: 1px solid rgba(255, 214, 139, 0.58);
+      background:
+        radial-gradient(circle at 14% 14%, rgba(255, 229, 171, 0.18), transparent 54%),
+        linear-gradient(180deg, rgba(33, 54, 27, 0.98), rgba(18, 34, 18, 0.98));
+      box-shadow:
+        0 20px 46px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 243, 208, 0.25);
+      padding: 20px 24px 18px;
+    }
+
+    .home-authors-dialog h3 {
+      margin: 0 0 14px;
+      font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+      color: #ffe7b4;
+      text-shadow: 0 2px 0 rgba(24, 14, 4, 0.76);
+    }
+
+    .home-authors-dialog p {
+      margin: 0;
+      font-size: clamp(1rem, 1.45vw, 1.18rem);
+      line-height: 1.45;
+      color: #f5ffd8;
+    }
+
+    .home-authors-dialog p + p {
+      margin-top: 10px;
+    }
+
+    .home-authors-close {
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      width: 34px;
+      height: 34px;
+      border: 1px solid rgba(255, 215, 144, 0.62);
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(100, 66, 28, 0.96), rgba(66, 43, 18, 0.98));
+      color: #ffe7b2;
+      font-family: "Tektur", "Trebuchet MS", sans-serif;
+      font-size: 1.06rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.15s ease, filter 0.15s ease;
+    }
+
+    .home-authors-close:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.06);
     }
 
     .home-right {
@@ -1994,10 +2072,12 @@
       .home-column:hover,
       .right-board-row:hover,
       .home-start-btn:hover,
+      .home-authors-btn:hover,
       .home-rules-btn:hover,
       .home-rules-nav:hover,
       .home-rules-next:hover,
-      .home-rules-close:hover {
+      .home-rules-close:hover,
+      .home-authors-close:hover {
         transform: none;
       }
     }
